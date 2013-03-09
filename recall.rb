@@ -10,7 +10,8 @@ SITE_DESCRIPTION = "'cause you're too busy to remember"
 enable :sessions
 use Rack::Flash, :sweep => true
 
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+DataMapper::setup(:default, "mysql://#{Dir.pwd}/recall.db")
 
 class Note
 	include DataMapper::Resource
